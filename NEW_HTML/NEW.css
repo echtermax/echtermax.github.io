@@ -1,0 +1,27 @@
+coming-soon {
+    padding: 15%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+	font-weight: bold;
+	font-style: italic;
+	font-family: Courier;
+	background-color: rgba(200, 12, 23, 0.25);
+	cursor: not-allowed;
+}
+
+grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15%;
+	margin: 0;
+	padding: 0% 5% 5% 5%;
+}
+
+grid-item {
+	background-color: #FEECC8;
+    padding: 15%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}

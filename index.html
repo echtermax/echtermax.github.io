@@ -1,15 +1,39 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="CSS/style.css">
-	<title>GymPals</title>
+	<link rel="stylesheet" type="text/css" href="CSS/index.css">
+	<title>Max's Kingdom</title>
+
+	<link rel="stylesheet" type="text/css" href="NEW_HTML/NEW.css">
+	<script src="NEW_HTML/NEW.js" defer></script>
 </head>
 <body>
-	<div class="center">
-		<h1>Gympals</h1>
-		<h2>Coming soon...</h2>
+
+	<div id="hero">
+		<h1 class="line-1 anim-typewriter">Welcome to Max's Kingdom</h1>
 	</div>
+
+	<nav>
+	    <!-- <a onclick="scrollToDiv('hero')" class="logo">Your Logo</a>
+	    <a href="#">CONTACT</a> -->
+	    <a onclick="scrollToDiv('projects')">PROJECTS</a>
+	    <a onclick="scrollToDiv('me')">ME</a>
+	</nav>
+		
+	<h1 id="me">ABOUT ME</h1>
+	<iframe src="timeline.html"></iframe>
+
+	<h1 id="projects">PROJECTS</h1>
+	<grid-container>
+		<grid-item data-coming-soon="true">GymPals</grid-item>
+	</grid-container>
+
+	<footer>
+		<p>&copy; 2024 echterMax. All rights reserved.</p>
+	</footer>
+
+	<script type="text/javascript" src="JS/index.js" defer></script>
 </body>
 </html>

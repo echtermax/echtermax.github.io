@@ -1,0 +1,106 @@
+:root {
+    --dark: #333;
+    --ligth: #ffffff;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#hero {
+    background-color: var(--dark);
+    color: var(--ligth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+nav {
+    background-color: var(--dark);
+    overflow: hidden;
+    padding-left: 5%;
+    padding-right: 5%;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    float: right;
+    display: block;
+    color: var(--ligth);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+nav .logo {
+    float: left;
+    display: block;
+    padding: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--dark);
+    color: var(--ligth);
+}
+
+h1 {
+    padding-left: 5%;
+}
+
+#me {
+    margin-top: 10%;
+}
+
+iframe {
+    width: 100%;
+    height: 66vh;
+    border: none;
+}
+
+.line-1{
+    position: relative; 
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+}
+
+.anim-typewriter{
+    animation: typewriter 4s steps(24) 1s 1 normal both,
+               blinkTextCursor 500ms steps(24) infinite normal;
+}
+    
+@keyframes typewriter{
+    from{width: 0;}
+    to{width: 14.5em;}
+}
+
+@keyframes blinkTextCursor{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+}
+
+@media (max-width: 600px) {
+    nav a {
+        float: rigth;
+        display: block;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

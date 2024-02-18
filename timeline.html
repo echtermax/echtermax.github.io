@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="CSS/timeline.css">
+	<title>Timeline</title>
+</head>
+<body>
+	<div class="timeline">
+		<div class="year" onclick="scrollToDiv('year2020')">2020</div>
+		<div class="year" onclick="scrollToDiv('year2023')">2023</div>
+		<div class="year" onclick="scrollToDiv('year2024')">2024</div>
+	</div>
+	<div class="container">
+		<div class="content" id="year2020">
+			<div class="event">
+				<div class="event-date"><h1><u><i>2020</i></u></h1></div>
+				<br>
+				<div class="event-title"><h3>GitHub</h3></div>
+				<br>
+				<div class="event-description">I created my GitHub account!</div>
+			</div>
+		</div>
+		<br>
+		<div class="content" id="year2023">
+			<div class="event">
+				<div class="event-date"><h1><u><i>2023</i></u></h1></div>
+				<br>
+				<div class="event-title"><h3>FSFE & YH4F</h3></div>
+				<br>
+				<div class="event-description">I competed in the Youth Hacking 4 Freedom competition held by the FSFS.</div>
+			</div>
+		</div>
+		<br>
+		<div class="content" id="year2024">
+			<div class="event">
+				<div class="event-date"><h1><u><i>2024</i></u></h1></div>
+				<br>
+				<div class="event-title"><h3>Portfolio</h3></div>
+				<br>
+				<div class="event-description">The first ever version of thos portfolio went live using GitHub Pages!</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="JS/timeline.js" defer></script>
+</body>
+</html>
