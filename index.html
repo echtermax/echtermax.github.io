@@ -4,35 +4,73 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="CSS/index.css">
-	<title>Max's Kingdom</title>
+	<title>Max' Kingdom</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" href="NEW_HTML/NEW.css">
-	<script src="NEW_HTML/NEW.js" defer></script>
+	<script src="NEW_HTML/NEW.js"></script>
 </head>
 <body>
 
 	<div id="hero">
-		<h1 class="line-1 anim-typewriter">Welcome to Max's Kingdom</h1>
+		<h1 class="line-1 anim-typewriter">Welcome to Max' Kingdom</h1>
 	</div>
 
-	<nav>
-	    <!-- <a onclick="scrollToDiv('hero')" class="logo">Your Logo</a>
-	    <a href="#">CONTACT</a> -->
-	    <a onclick="scrollToDiv('projects')">PROJECTS</a>
-	    <a onclick="scrollToDiv('me')">ME</a>
-	</nav>
+	<div class="topnav" id="myTopnav">
+		<a href="scrollToDiv('hero')">Max' Kingdom</a>
+		<a href="scrollToDiv('projects')">PROJECTS</a>
+		<a href="scrollToDiv('me')">ME</a>
+		<a href="javascript:void(0);" class="icon" onclick="navBurger()">
+		  <i class="fa fa-bars"></i>
+		</a>
+	  </div>
 		
 	<h1 id="me">ABOUT ME</h1>
 	<iframe src="timeline.html"></iframe>
 
-	<h1 id="projects">PROJECTS</h1>
+	<h1 id="projects">
+		<label for="filter">Projects</label>
+		<select name="filter" id="filter" onchange="filterProjects()">
+			<option value="all">All</option>
+			<option value="web">Web</option>
+			<option value="available">Available</option>
+			<option value="coming-soon">Coming Soon</option>
+		</select>
+	</h1>
 	<grid-container>
-		<grid-item data-coming-soon="true">GymPals</grid-item>
+		<grid-item data-category="coming-soon" data-coming-soon="true">GymPals</grid-item>
+		<grid-item data-category="web" data-coming-soon="false" onclick="openDialog('portfolio')" class="project">Portfolio</grid-item>
 	</grid-container>
 
 	<footer>
 		<p>&copy; 2024 echterMax. All rights reserved.</p>
 	</footer>
+
+	<dialog id="portfolio">
+		<table><tr>
+			<th><h1>Portfolio</h1></th>
+			<th><a href="https://github.com/echtermax/echtermax.github.io" target="_blank"><i class="fa fa-github"></i></a></th>
+		</tr></table>
+		<h3>Key Featurs</h3>
+		<ul>
+			<li>Responsive</li>
+			<li>Modern</li>
+			<li>Useful</li>
+		</ul>
+		<h3>Technologies</h3>
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+		</ul>
+		<h3>Tags</h3>
+		<ul class="tag-container">
+			<span class="tag">Web</span>
+			&nbsp; 
+		</ul>
+		<button class="closeBtn" onclick="closeDialog('portfolio')">Close</button>
+	</dialog>
 
 	<script type="text/javascript" src="JS/index.js" defer></script>
 </body>

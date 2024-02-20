@@ -8,6 +8,8 @@ window.onload = function() {
             comingSoon.textContent = element.textContent;
             comingSoon.appendChild(lineBreak);
             comingSoon.appendChild(document.createTextNode('Coming soon...'));
+            comingSoon.classList.add('project');
+            comingSoon.setAttribute('data-category', 'coming-soon');
             element.textContent = '';
             element.parentNode.appendChild(comingSoon);
             element.parentNode.removeChild(element);

@@ -9,6 +9,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
 }
 
@@ -21,35 +22,6 @@ body {
     height: 100vh;
 }
 
-nav {
-    background-color: var(--dark);
-    overflow: hidden;
-    padding-left: 5%;
-    padding-right: 5%;
-    position: sticky;
-    top: 0;
-}
-
-nav a {
-    float: right;
-    display: block;
-    color: var(--ligth);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-nav .logo {
-    float: left;
-    display: block;
-    padding: 15px;
-}
-
 footer {
     text-align: center;
     padding: 10px;
@@ -58,7 +30,7 @@ footer {
 }
 
 h1 {
-    padding-left: 5%;
+    padding-left: 5vw;
 }
 
 #me {
@@ -96,11 +68,139 @@ iframe {
 }
 
 @media (max-width: 600px) {
-    nav a {
-        float: rigth;
+    iframe {
+        height: 100vh;
+    }
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+grid-item a {
+    width: 100%;
+    height: 100%;
+}
+
+::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+}
+
+.closeBtn {
+    float: right;
+}
+
+dialog {
+    height: 80%;
+    width: 50%;
+}
+
+th {
+    width: 50%;
+}
+
+dialog table {
+    border-bottom: 1px solid var(--dark);
+    width: 100%;
+}
+
+table h1 {
+    float: left;
+}
+
+dialog a {
+    float: right;
+    padding: 10px;
+    font-size: 150%;
+    color: var(--dark);
+    border: none;
+}
+
+dialog a:active {
+    border: none;
+}
+
+.tag-container {
+  display: block;
+}
+
+.tag {
+  background: #B8DCDB;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 5px 10px;
+  margin: 3px 0;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a:first-child:hover {
+    background-color: #333;
+    color: #f2f2f2;
+    cursor: default;
+}
+
+.topnav a:first-child {
+    float: left;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a {
+        float: left;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .topnav.responsive {
+        position: sticky;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
         display: block;
         text-align: left;
-        width: 100%;
-        box-sizing: border-box;
     }
+}
+
+select {
+    margin-left: 5%;
+    height: 100%;
 }

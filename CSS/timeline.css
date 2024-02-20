@@ -72,6 +72,7 @@
 	.container {
 		width: 100%;
 		aspect-ratio: 0.5;
+		overflow-y: auto;
 	}
 
 	.content {
