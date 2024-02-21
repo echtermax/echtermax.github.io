@@ -1,6 +1,28 @@
+/* Overview:
+    - General
+    - Hero
+    - Footer
+    - Headlines
+    - Frame
+    - Navigation
+    - Dialog
+    - Filter controll
+    - Animations
+        - Typewriter
+    - Reponsive
+        - Navigation
+        - Dialog
+        - Filter controll
+        - Frame
+*/
+
+/* General */
+
 :root {
     --dark: #333;
     --ligth: #ffffff;
+    --contrast: #f2f2f2;
+    --tag: #B8DCDB;
 }
 
 *::-webkit-scrollbar {
@@ -13,6 +35,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Hero */
+
 #hero {
     background-color: var(--dark);
     color: var(--ligth);
@@ -22,28 +46,7 @@ body {
     height: 100vh;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: var(--dark);
-    color: var(--ligth);
-}
-
-h1 {
-    padding-left: 5vw;
-}
-
-#me {
-    margin-top: 10%;
-}
-
-iframe {
-    width: 100%;
-    height: 66vh;
-    border: none;
-}
-
-.line-1{
+.line-1 {
     position: relative; 
     border-right: 2px solid rgba(255,255,255,.75);
     font-size: 180%;
@@ -52,30 +55,39 @@ iframe {
     font-family: monospace;
 }
 
-.anim-typewriter{
-    animation: typewriter 4s steps(24) 1s 1 normal both,
-               blinkTextCursor 500ms steps(24) infinite normal;
-}
-    
-@keyframes typewriter{
-    from{width: 0;}
-    to{width: 14.5em;}
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--dark);
+    color: var(--ligth);
 }
 
-@keyframes blinkTextCursor{
-    from{border-right-color: rgba(255,255,255,.75);}
-    to{border-right-color: transparent;}
+/* Headlines */
+
+h1 {
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
-@media (max-width: 600px) {
-    iframe {
-        height: 100vh;
-    }
+#me {
+    margin-top: 10%;
 }
+
+/* Frame */
+
+iframe {
+    width: 100%;
+    height: 66vh;
+    border: none;
+}
+
+/* Navigation */
 
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: var(--dark);
     position: sticky;
     top: 0;
 }
@@ -83,26 +95,38 @@ iframe {
 .topnav a {
     float: right;
     display: block;
-    color: #f2f2f2;
+    color: var(--contrast);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
 }
 
-grid-item a {
-    width: 100%;
-    height: 100%;
+.topnav a:hover {
+    background-color: var(--contrast);
+    color: var(--dark);
 }
+
+.topnav a:first-child:hover {
+    background-color: var(--dark);
+    color: var(--contrast);
+    cursor: default;
+}
+
+.topnav a:first-child {
+    float: left;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/* Dialog */
 
 ::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(5px);
-}
-
-.closeBtn {
-    float: right;
 }
 
 dialog {
@@ -140,36 +164,93 @@ dialog a:active {
 }
 
 .tag {
-  background: #B8DCDB;
+  background: var(--tag);
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   padding: 5px 10px;
   margin: 3px 0;
   border-radius: 6px;
+  border: none;
   display: inline-block;
+  cursor: pointer;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+.dates {
+    width: 100%;
 }
 
-.topnav a:first-child:hover {
-    background-color: #333;
-    color: #f2f2f2;
-    cursor: default;
+.edit-date {
+    float: right;
 }
 
-.topnav a:first-child {
-    float: left;
+.closeBtn {
+    float: right;
+    font-size: 125%;
+    border-radius: 5%;
+    color: var(--dark);
+    border: none;
+    cursor: pointer;
 }
 
-.topnav .icon {
+.closeBtn:hover {
+    background-color: var(--dark);
+    color: var(--ligth);
+}
+
+/* Filter controll */
+
+.filter {
     display: none;
 }
 
+.filter-container {
+    max-width: 6vw;
+    right: 5vw;
+    position: absolute;
+    z-index: 99;
+}
+
+.filter,
+#filter {
+    width: 10vw;
+    height: 4vh;
+    background-color: var(--dark);
+    color: var(--contrast);
+    border: 1px solid var(--dark);
+    float: right;
+    cursor: pointer;
+}
+
+.filter:hover,
+#filter:hover {
+    background-color: var(--contrast);
+    color: var(--dark);
+}
+
+/* Animations */
+/* Typewriter */
+
+@keyframes typewriter{
+    from{width: 0;}
+    to{width: 14.5em;}
+}
+
+@keyframes blinkTextCursor{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+}
+
+.anim-typewriter {
+    animation: typewriter 4s steps(24) 1s 1 normal both,
+               blinkTextCursor 500ms steps(24) infinite normal;
+}
+
+/* Reponsive */
+
 @media screen and (max-width: 600px) {
+
+    /* Navigation */
     .topnav a:not(:first-child) {
         display: none;
     }
@@ -198,9 +279,25 @@ dialog a:active {
         display: block;
         text-align: left;
     }
-}
 
-select {
-    margin-left: 5%;
-    height: 100%;
+    /* Dialog */
+
+    dialog {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Filter controll */
+
+    .filter,
+    #filter {
+        width: 30vw;
+        height: 5vh;
+    }
+
+    /* Frame */
+
+    iframe {
+        height: 100vh;
+    }
 }

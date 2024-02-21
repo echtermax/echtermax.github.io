@@ -22,9 +22,23 @@ function closeDialog(dialog) {
 	dialog.close();
 }
 
-function filterProjects() {
-	var filter = document.getElementById('filter').value;
+function openFilter() {
+	var filterOpt = document.querySelectorAll('.filter');
+	filterOpt.forEach(function(filter) {
+		if (filter.style.display === 'block') {
+			filter.style.display = 'none';
+		} else {
+			filter.style.display = 'block';
+		}
+	});
+}
+
+function filterProjects(filter) {
 	var projects = document.querySelectorAll('.project');
+	var filterLabel = document.getElementById('filter');
+	var filterOpt = document.getElementsByName(filter);
+	var text = filterOpt[0].innerHTML;
+	filterLabel.innerHTML = text;
 	projects.forEach(function(project) {
 		if (filter === 'all') {
 			project.style.display = 'block';
@@ -36,4 +50,11 @@ function filterProjects() {
 			project.style.display = 'none';
 		}
 	});
+}
+
+function filterProjectsByTag(tag, dialog) {
+	var filter = document.getElementById('filter');
+	filter.value = tag;
+	filterProjects(tag);
+	closeDialog(dialog);
 }

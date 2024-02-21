@@ -1,22 +1,41 @@
+<!-- Overview:
+	- Head
+		- Icon
+		- Style
+		- Script
+	- Hero
+	- Navigation
+	- About me
+	- Projects
+	- Footer
+	- Dialogs
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="CSS/index.css">
 	<title>Max' Kingdom</title>
 
+	<!-- Icon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<!-- Style -->
 	<link rel="stylesheet" type="text/css" href="NEW_HTML/NEW.css">
-	<script src="NEW_HTML/NEW.js"></script>
+	<link rel="stylesheet" type="text/css" href="CSS/index.css">
+
+	<!-- Script -->
+	<script type="text/javascript" src="JS/index.js" defer></script>
+	<script src="NEW_HTML/NEW.js" defer></script>
 </head>
 <body>
-
+	<!-- Hero -->
 	<div id="hero">
-		<h1 class="line-1 anim-typewriter">Welcome to Max' Kingdom</h1>
+		<h2 class="line-1 anim-typewriter">Welcome to Max' Kingdom</h2>
 	</div>
 
+	<!-- Navigation -->
 	<div class="topnav" id="myTopnav">
 		<a href="scrollToDiv('hero')">Max' Kingdom</a>
 		<a href="scrollToDiv('projects')">PROJECTS</a>
@@ -25,29 +44,36 @@
 		  <i class="fa fa-bars"></i>
 		</a>
 	  </div>
-		
+	
+	<!-- About me -->
 	<h1 id="me">ABOUT ME</h1>
 	<iframe src="timeline.html"></iframe>
 
+	<!-- Projects -->
 	<h1 id="projects">
-		<label for="filter">Projects</label>
-		<select name="filter" id="filter" onchange="filterProjects()">
-			<option value="all">All</option>
-			<option value="web">Web</option>
-			<option value="available">Available</option>
-			<option value="coming-soon">Coming Soon</option>
-		</select>
+		<label>Projects</label>
+		<button id="filter" onclick="openFilter()">Filter</button>
+		<div class="filter-container">
+			<button class="filter" name="all" onclick="filterProjects('all'); openFilter()">All</button>
+			<button class="filter" name="web" onclick="filterProjects('web'); openFilter()">Web</button>
+			<button class="filter" name="available" onclick="filterProjects('available'); openFilter()">Available</button>
+			<button class="filter" name="coming-soon" onclick="filterProjects('coming-soon'); openFilter()">Coming Soon</button>
+		</div>
 	</h1>
 	<grid-container>
 		<grid-item data-category="coming-soon" data-coming-soon="true">GymPals</grid-item>
 		<grid-item data-category="web" data-coming-soon="false" onclick="openDialog('portfolio')" class="project">Portfolio</grid-item>
 	</grid-container>
 
+	<!-- Footer -->
 	<footer>
 		<p>&copy; 2024 echterMax. All rights reserved.</p>
 	</footer>
 
+	<!-- Dialogs -->
 	<dialog id="portfolio">
+		<span>Since: Jan 29, 2024</span>
+		<span class="edit-date">Latest edit: Feb 20, 2024</span>
 		<table><tr>
 			<th><h1>Portfolio</h1></th>
 			<th><a href="https://github.com/echtermax/echtermax.github.io" target="_blank"><i class="fa fa-github"></i></a></th>
@@ -66,12 +92,10 @@
 		</ul>
 		<h3>Tags</h3>
 		<ul class="tag-container">
-			<span class="tag">Web</span>
+			<button class="tag" onclick="filterProjectsByTag('web', 'portfolio')">Web</button>
 			&nbsp; 
 		</ul>
 		<button class="closeBtn" onclick="closeDialog('portfolio')">Close</button>
 	</dialog>
-
-	<script type="text/javascript" src="JS/index.js" defer></script>
 </body>
 </html>

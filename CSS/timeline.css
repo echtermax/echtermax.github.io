@@ -13,7 +13,7 @@
 	right: 0;
 	width: 5%;
 	height: 90%;
-	background-color: #f0f0f0;
+	background-color: #f2f2f2;
 	padding-top: 20px;
 	display: flex;
 	flex-direction: column;
@@ -51,12 +51,11 @@
 	display: block;
 	width: 10px;
 	height: 1px;
-	background-color: #ccc;
+	background-color: #333;
 	margin: 0 auto;
 }
 
 .event {
-	/* center content */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
